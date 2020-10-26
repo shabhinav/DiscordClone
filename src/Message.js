@@ -3,18 +3,20 @@ import './Message.css'
 import { Avatar } from '@material-ui/core'
 
 
-function Message() {
+function Message({timeStamp,user,message}) {
+    
+
     return (
         <div className='message'>
-            <Avatar />
+            {console.log('data',user,message,timeStamp)}
+            <Avatar src={user.photo}/>
             <div className="message__info">
-                <h4>abhinav
-                    <span className='message__timestamp'>
-                        this is a timestamp
+                <h4>{user.displayName}
+                    <span className='message__timestamp'>                        
+                        {(timeStamp?(new Date(timeStamp.seconds)).toString():'')}
                     </span>
                 </h4>
-
-                <p>This is a message</p>
+                <p>{message}</p>
             </div>
         </div>
     )
