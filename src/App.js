@@ -24,10 +24,10 @@ function App() {
         }))
       }
       else{
-        
+        dispatch(logout())
       }
     })
-  }, []);
+  }, [dispatch]);
 
 
   return (
